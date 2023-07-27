@@ -4,24 +4,109 @@
 @tailwind components;
 @tailwind utilities;
 
+.section-holder {
+  @apply max-w-[1920px] m-auto;
+}
+
+.section-holder-container {
+  @apply w-full;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --border: 201 100% 50%;
+    --input: 240 5.9% 90%;
+
+    --primary: 201 100% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: ;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 240 5% 64.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
 @layer utilities {
+  .after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: currentColor;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  .apply-underline {
+    width: 100%;
+    left: 0;
+  }
   .hover-to-underline {
     position: relative;
 
     &::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 50%;
-      background-color: currentColor;
-      transition: width 0.3s ease, left 0.3s ease;
+      @apply after;
     }
 
     &:hover::after {
-      width: 100%;
-      left: 0;
+      @apply apply-underline;
     }
+  }
+  .hover-body-to-underline-h1 {
+    & > h1 {
+      position: relative;
+    }
+
+    & > h1::after {
+      @apply after;
+    }
+    &:hover > h1::after {
+      @apply apply-underline;
+    }
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hidden-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .service-card {
+    border-radius: 8px;
+    background: conic-gradient(
+      from 1deg at 54.46% 59.6%,
+      #070707 327.51158237457275deg,
+      #121212 360deg
+    );
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

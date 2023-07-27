@@ -1,31 +1,34 @@
 import Link from "next/link";
 import { HypeSquadIcon } from "./ui/icons";
-
-interface LinkProps {
-  href: string;
-  label: string;
-}
-
-const EachLink = (linkProps: LinkProps) => {
-  const { href, label } = linkProps;
-  return (
-    <Link href={href}>
-      <div className="text-black px-3 py-2 rounded-md text-sm font-medium hover-to-underline">
-        {label}
-      </div>
-    </Link>
-  );
-};
+import SectionHolder from "./ui/sectionHolder";
+import MobileMenu from "./mobileMenu";
+import { EachLink } from "./ui/eachLink";
 
 export default function Navbar() {
+  const sections = [
+    { href: "#home", label: "Home" },
+    { href: "#brands", label: "Brands" },
+    { href: "#services", label: "Services" },
+    { href: "#team", label: "Team" },
+    { href: "#contact", label: "Contact" },
+  ];
   return (
-    <div className="flex flex-row justify-between items-center w-full px-4 py-2">
-      <HypeSquadIcon />
-      <div className="flex flex-row justify-between items-center ">
-        <EachLink href="/" label="Home" />
-        <EachLink href="/about" label="About" />
-        <EachLink href="/contact" label="Contact" />
+    <SectionHolder
+      as="nav"
+      className="flex flex-row justify-between items-center w-full px-8 py-2 min-h-[100px]"
+      parentClassName="fixed top-0 bg-white z-10 "
+    >
+      <HypeSquadIcon className="h-[72px] w-[116px]" />
+      <div className=" flex-row justify-between items-center md:flex hidden">
+        {sections.map((section) => (
+          <EachLink
+            href={section.href}
+            label={section.label}
+            key={`pc@${section.label}`}
+          />
+        ))}
       </div>
-    </div>
+      <MobileMenu sections={sections} />
+    </SectionHolder>
   );
 }

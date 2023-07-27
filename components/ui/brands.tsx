@@ -95,7 +95,11 @@ const ImageRowHolder = ({ children }: { children: React.ReactNode }) => {
 
 const ImageHolder = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="w-[100px] h-[100px] min-w-[100px] min-h-[100px] max-w-[100px] max-h-[100px] relative">
+    <div
+      className="md:w-[100px] md:h-[100px] md:min-w-[100px] md:min-h-[100px] md:max-w-[100px] md:max-h-[100px] relative
+    w-[70px] h-[70px] min-w-[70px] min-h-[70px] max-w-[70px] max-h-[70px] 
+    "
+    >
       {children}
     </div>
   );

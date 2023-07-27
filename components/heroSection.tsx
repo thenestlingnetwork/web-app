@@ -8,7 +8,7 @@ import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
 
 function Moto() {
   return (
-    <div className="flex flex-col items-center md:items-start justify-center max-w-[50%] text-center md:text-left  ">
+    <div className="flex flex-col items-center md:items-start justify-center md:max-w-[50%] md:px-0 px-[10px] text-center md:text-left  ">
       <h1 className="text-4xl md:text-6xl font-bold text-white">
         <span className="text-primary">We</span> are the{" "}
         <span className="text-primary">best</span> in the business

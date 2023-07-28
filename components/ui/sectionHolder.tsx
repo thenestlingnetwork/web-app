@@ -10,6 +10,7 @@ interface SectionHolderProps {
   bgImage?: string;
   imageOpacity?: number;
   id?: string;
+  InsertToParent?: React.JSX.Element;
 }
 
 function SectionHolder({
@@ -20,6 +21,8 @@ function SectionHolder({
   bgImage,
   imageOpacity = 1,
   id,
+  InsertToParent,
+
   ...props
 }: SectionHolderProps) {
   const bgImageStyle = bgImage && {
@@ -37,6 +40,7 @@ function SectionHolder({
       style={bgImageStyle ? bgImageStyle : {}}
     >
       <div className={cn("section-holder", className)}>{children}</div>
+      {InsertToParent}
     </Component>
   );
 }

@@ -55,15 +55,15 @@ const Gallery = ({ images }: { images: Array<string> }) => {
         {images.map((el: string, index: number) => {
           if (index % 2 == 0) return;
           return (
-            <ImageHolder>
+            <ImageHolder key={el}>
               <Image
                 //   width={width}
                 //   height={height}
                 alt={"alt"}
                 src={`/midj/${el}`}
-                key={el}
                 fill
-                objectFit="contain"
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </ImageHolder>
           );
@@ -71,15 +71,15 @@ const Gallery = ({ images }: { images: Array<string> }) => {
       </ImageRowHolder>
       <ImageRowHolder>
         {images.map((el: string, index: number) => {
-          if (index % 2 != 0) return;
+          if (index % 2 != 0) return null;
           return (
-            <ImageHolder>
+            <ImageHolder key={el}>
               <Image
                 alt={"alt"}
                 src={`/midj/${el}`}
-                key={el}
                 fill
                 className="object-contain"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </ImageHolder>
           );
@@ -93,12 +93,19 @@ const ImageRowHolder = ({ children }: { children: React.ReactNode }) => {
   return <div className="flex flex-row gap-5">{children}</div>;
 };
 
-const ImageHolder = ({ children }: { children: React.ReactNode }) => {
+const ImageHolder = ({
+  children,
+  key,
+}: {
+  children: React.ReactNode;
+  key: string;
+}) => {
   return (
     <div
       className="md:w-[100px] md:h-[100px] md:min-w-[100px] md:min-h-[100px] md:max-w-[100px] md:max-h-[100px] relative
     w-[70px] h-[70px] min-w-[70px] min-h-[70px] max-w-[70px] max-h-[70px] 
     "
+      key={key}
     >
       {children}
     </div>

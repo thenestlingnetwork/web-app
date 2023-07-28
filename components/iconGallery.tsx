@@ -12,7 +12,7 @@ async function IconGallery() {
   return (
     <SectionHolder
       parentClassName="max-w-[100vw] bg-white "
-      className="overflow-auto p-20"
+      className="overflow-auto py-20 md:p-20"
       id="brands"
     >
       <Brands imageFilenames={imageFilenames} />

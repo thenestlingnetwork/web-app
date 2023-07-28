@@ -1,4 +1,5 @@
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import "./globals.css";
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
         <main className="flex flex-col justify-center items-center w-full mt-[100px]">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

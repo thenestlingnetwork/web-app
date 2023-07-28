@@ -33,13 +33,14 @@ function Card({ service, ...props }: { service: service; props?: any }) {
     <CardChildHolder
       {...props}
       className="hover-body-to-underline-h1 hover:shadow-xl hover:shadow-muted/10 transition-all duration-500 ease-in-out
-      hover:scale-101 hover:rotate-1 hover:translate-y-[-5px]"
+      hover:scale-[1.1] hover:rotate-1 hover:translate-y-[-5px] cursor-pointer"
     >
       <Image
         src={service.image}
         width={150}
         height={150}
         alt={service.name}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="hover:rotate-3 duration-500 ease-in-out"
       />
       <Heading>{service.name}</Heading>

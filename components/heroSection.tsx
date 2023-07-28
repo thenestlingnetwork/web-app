@@ -32,7 +32,7 @@ function Moto() {
 function MainLogo() {
   return (
     <div className="min-w-[40%] flex flex-col gap-10">
-      <HypeSquadIcon className="w-full h-full" />
+      <HypeSquadIcon className="w-full h-full hover:scale-105 transition-all duration-500 ease-in-out" />
       <div className="flex w-full justify-center items-center gap-2 mt-4">
         <span className="text-white text-sm md:text-base font-bold">
           Powered by
@@ -42,6 +42,7 @@ function MainLogo() {
           width={80}
           height={50}
           alt="the networking network"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
     </div>

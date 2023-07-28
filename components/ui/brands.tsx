@@ -59,6 +59,7 @@ const Gallery = ({ images }: { images: Array<string> }) => {
               <Image
                 //   width={width}
                 //   height={height}
+                priority
                 alt={"alt"}
                 src={`/midj/${el}`}
                 fill
@@ -78,6 +79,7 @@ const Gallery = ({ images }: { images: Array<string> }) => {
                 alt={"alt"}
                 src={`/midj/${el}`}
                 fill
+                priority
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />

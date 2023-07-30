@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button, buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 function Moto() {
   return (
@@ -18,13 +19,15 @@ function Moto() {
         libero vitae auctor aliquam, odio elit laoreet sapien, ac rutrum diam
         arcu at nunc.
       </p>
-      <Button
-        variant={"secondary"}
-        className=" py-5 gap-3 w-[180px] mt-5 bg-primary rounded-full"
-      >
-        <EnvelopeClosedIcon className="mr-2" />
-        <span>Contact us</span>
-      </Button>
+      <Link href="#contact">
+        <Button
+          variant={"secondary"}
+          className=" py-5 gap-3 w-[180px] mt-5 bg-primary rounded-full"
+        >
+          <EnvelopeClosedIcon className="mr-2" />
+          <span>Contact us</span>
+        </Button>
+      </Link>
     </div>
   );
 }

@@ -11,13 +11,13 @@ function Moto() {
   return (
     <div className="flex flex-col items-center md:items-start justify-center md:max-w-[50%] md:px-0 px-[10px] text-center md:text-left  ">
       <h1 className="text-4xl md:text-6xl font-bold text-white">
-        <span className="text-primary">We</span> are the{" "}
-        <span className="text-primary">best</span> in the business
+        <span className="text-primary">Building Brands</span> in the{" "}
+        <span className="text-primary">gaming</span> industry
       </h1>
       <p className="text-white text-xl mt-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan,
-        libero vitae auctor aliquam, odio elit laoreet sapien, ac rutrum diam
-        arcu at nunc.
+        We provide solutions to help you drive significantly more sales, acquire
+        engaging customers and build a stronger community. We are not your
+        neighborhood influencer marketing agency!
       </p>
       <Link href="#contact">
         <Button

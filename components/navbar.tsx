@@ -18,7 +18,9 @@ export default function Navbar() {
       className="flex flex-row justify-between items-center w-full px-8 py-2 min-h-[100px]"
       parentClassName="fixed top-0 bg-white z-10 "
     >
-      <HypeSquadIcon className="h-[72px] w-[116px]" />
+      <Link href="/">
+        <HypeSquadIcon className="h-[72px] w-[116px]" />
+      </Link>
       <div className=" flex-row justify-between items-center md:flex hidden">
         {sections.map((section) => (
           <EachLink

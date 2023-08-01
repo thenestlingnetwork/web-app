@@ -15,9 +15,12 @@ function Moto() {
         <span className="text-primary">gaming</span> industry
       </h1>
       <p className="text-white text-xl mt-4">
-        We provide solutions to help you drive significantly more sales, acquire
-        engaging customers and build a stronger community. We are not your
-        neighborhood influencer marketing agency!
+        We connect businesses with audiences through Influencers, Events, PR,
+        Socials, Ads and Creatives.{" "}
+        <span className="text-primary hover:underline">
+          <Link href="/"> HypeSquad </Link>
+        </span>
+        helps you build the quirky campaigns who stand out from the competition.
       </p>
       <Link href="#contact">
         <Button

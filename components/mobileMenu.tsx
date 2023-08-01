@@ -16,8 +16,12 @@ interface mobileMenuProps {
 
 function MobileMenu({ sections }: mobileMenuProps) {
   return (
-    <div className="md:hidden">
-      <Menu as="div" className="relative inline-block text-left">
+    <div className="md:hidden" id="mobilemenu">
+      <Menu
+        as="div"
+        className="relative inline-block text-left"
+        id="hamburger-menu"
+      >
         <Menu.Button>
           <HamburgerMenuIcon className="h-[24px] w-[24px]" />
         </Menu.Button>

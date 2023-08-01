@@ -12,8 +12,22 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-    },
-    extend: {
+      keyframes: {
+        scrollPc: {
+          "0%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(calc( -2580px + 100vw ))" },
+          "100%": { transform: "translateX(0)" },
+        },
+        scrollMobile: {
+          "0%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(calc( -1830px + 100vw ))" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        scrollPc: "scrollPc 50s infinite linear",
+        scrollMobile: "scrollMobile 70s infinite linear",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

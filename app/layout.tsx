@@ -3,9 +3,9 @@ import Footer from "@/components/footer";
 import "./globals.css";
 
 export const metadata = {
-  title: "Hype Squad",
+  title: "Hype Squad powered by The Nestling Network",
   description:
-    "We provide solutions to help you drive significantly more sales, acquire engaging customers and build a stronger community. We are not your neighborhood influencer marketing agency! We understand how brands are built in the gaming industry and we help you replicate the same.",
+    "Hype Squad provide solutions to help you drive significantly more sales, acquire engaging customers and build a stronger community. We are not your neighborhood influencer marketing agency! We understand how brands are built in the gaming industry and we help you replicate the same.",
 };
 
 export default function RootLayout({

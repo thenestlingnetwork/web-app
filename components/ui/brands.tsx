@@ -1,12 +1,17 @@
 "use client";
 import Image from "next/image";
+import {
+  ArrowLeft as ArrowLeftIcon,
+  ArrowRight as ArrowRightIcon,
+} from "@radix-ui/react-icons";
 import React, { useEffect, useRef } from "react";
+import { Button } from "./button";
 export const Brands = ({ imageFilenames }: { imageFilenames: string[] }) => {
   const scrollDiv = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let scrollAmount = 0;
-    let step = 1; // Change this to modify the speed of the scroll
+    let step = 0.2; // Change this to modify the speed of the scroll
     let direction = 1; // 1 for right, -1 for left
 
     const scroll = () => {

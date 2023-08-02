@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import "./globals.css";
+import Head from "next/head";
 
 export const metadata = {
   title: "Hype Squad powered by The Nestling Network",
@@ -15,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="canonical" href="https://www.thenestlingnetwork.com/" />
+      </Head>
       <body>
         <Navbar />
         <main className="flex flex-col justify-center items-center w-full mt-[100px]">

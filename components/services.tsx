@@ -17,7 +17,7 @@ function Services() {
       imageOpacity={0.2}
       parentClassName="bg-black"
       id="services"
-      className="flex flex-col md:flex-row justify-evenly items-stretch px-10 py-20 md:py-40 md:px-20 gap-10 w-full "
+      className="flex flex-col md:flex-row flex-wrap justify-evenly items-stretch px-10 py-20 md:py-40 md:px-20 gap-10 w-full "
     >
       {services.map((service: service, index: number) => (
         <Card key={index} service={service} />

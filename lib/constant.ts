@@ -3,9 +3,26 @@ import {
   InstagramIcon,
   LinkedinIcon,
 } from "@/components/ui/icons";
-import { type } from "os";
 
 export const services = [
+  {
+    image: "/influencer.png",
+    name: "Influencer Marketing",
+    description: [
+      "Perform Campaigns CPI, CPA, CPV, etc",
+      "Live Stream / Vod Integration",
+      "Brand Endorsement Via celebrity",
+    ],
+  },
+  {
+    image: "/talent.png",
+    name: "Talent Management",
+    description: [
+      "Content creation and distribution",
+      "Talent Partnership for events: Shoutcasters, host, analyst, cosplays, etc",
+      "Esports Team: players, creators, coaches, etc",
+    ],
+  },
   {
     image: "/influencer.png",
     name: "Influencer Marketing",
@@ -32,28 +49,28 @@ export const teams = [
     role: "Founder",
     image: "/gaurav.png",
     description:
-      "Ex. exports athlete and one of the OGs. Offers a wonderful blend of knowledge, ideas and experties when it comes to curating and managing esport sIPs, events and talents. He has more than 9 years of hands-oin experince in gaming and cosplays events and has been an active Evangelist in the gaming space for more than 11 years.",
+      "An Award-Winning Cosplayer turned Entrepreneur who offers a wonderful blend of knowledge, ideas, and expertise when it comes to curating and managing Esports and Gaming IPS, Events, Talents, and Marketing.He have been a passionate Evangelist who has worked with almost all stakeholders in the gaming industry for more than 13 years , and have more than 9 years of hands-on experience in gaming and esports. As the founder of `The Nestling Network`, I'm attempting to reshape the market and leave a lasting impression on the Indian gaming sector by promising more exhilarating journeys in this dynamic setting.",
     email: "",
     linkedin: "",
   },
-  {
-    name: "Tryaksh Sharma",
-    role: "Founder",
-    image: "/tryaksh.png",
-    description:
-      "Being a top tier esports athlete and content creator himself, he owns same of best COD teams of india and Asia. Having worked with over 2000 influencers across the gaming and web3, he offers his creativity approach towards crafting quirky marketing stratigies that leave a mark on the audience's mind.",
-    email: "",
-    linkedin: "https://www.linkedin.com/in/trayaksh-sharma-279617184",
-  },
+  // {
+  //   name: "Tryaksh Sharma",
+  //   role: "Founder",
+  //   image: "/tryaksh.png",
+  //   description:
+  //     "Being a top tier esports athlete and content creator himself, he owns same of best COD teams of india and Asia. Having worked with over 2000 influencers across the gaming and web3, he offers his creativity approach towards crafting quirky marketing stratigies that leave a mark on the audience's mind.",
+  //   email: "",
+  //   linkedin: "https://www.linkedin.com/in/trayaksh-sharma-279617184",
+  // },
 ];
 
 export const contacts = {
   meetignUrl: "https://calendly.com/trayaksh_tnn",
-  phone: ["+91 8779131414", "+91 8076924861"],
+  phone: ["+91 8779131414"],
+  email: ["gaurav@thenestlingnetwork.com"],
 };
 
-export const address =
-  "A-303, Aanandimata Appartment, Pakhadi, Kharegaon, Kalwa, Thane - 400605";
+export const address = "Mumbai, Thane - 400605";
 
 export const socials = {
   instagram: {

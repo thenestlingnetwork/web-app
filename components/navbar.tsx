@@ -19,7 +19,7 @@ export default function Navbar() {
       parentClassName="fixed top-0 bg-white z-10 "
     >
       <Link href="/">
-        <HypeSquadIcon className="h-[72px] w-[116px]" />
+        <HypeSquadIcon className="h-auto w-[66px]" />
       </Link>
       <div className=" flex-row justify-between items-center md:flex hidden">
         {sections.map((section) => (

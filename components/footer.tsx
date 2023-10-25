@@ -40,7 +40,7 @@ function CopyRight() {
     <div className="flex flex-row justify-center items-center p-2 pb-4">
       <p className="text-black/60 text-xs">
         © 2023 All Rights Reserved.
-        <a href="/"> Hype Squad</a>
+        <a href="/"> Nestling Network</a>
       </p>
     </div>
   );

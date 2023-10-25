@@ -2,7 +2,7 @@ import React from "react";
 import SectionHolder from "./ui/sectionHolder";
 import { address, contacts } from "@/lib/constant";
 import Link from "next/link";
-import { BookMeetingIcon, CallIcon, LocationIcon } from "./ui/icons";
+import { BookMeetingIcon, CallIcon, LocationIcon, MailIcon } from "./ui/icons";
 import { cn } from "@/lib/utils";
 function Contact() {
   return (
@@ -10,21 +10,21 @@ function Contact() {
       id="contact"
       className="bg-[#001029] py-20 px-20 flex flex-col justify-evenly items-stretch md:flex-row w-full md:gap-1 gap-10"
     >
-      <Contacts className="" />
-      <Address className="" />
+      <Contacts />
+      <Address />
     </SectionHolder>
   );
 }
 
 export default Contact;
 
-function Contacts({ className }: { className: string }) {
+function Contacts({ className }: { className?: string }) {
   return (
     <Wrraper className={className}>
       <h1 className="text-2xl font-bold text-white mb-5 max-w-[300px]">
         Contact Us
       </h1>
-      <ContactsWrraper>
+      {/* <ContactsWrraper>
         <BookMeetingIcon />
         <Link
           href={contacts.meetignUrl}
@@ -33,7 +33,20 @@ function Contacts({ className }: { className: string }) {
         >
           Book a meeting
         </Link>
-      </ContactsWrraper>
+      </ContactsWrraper> */}
+      {contacts.email.map((email, index) => (
+        <ContactsWrraper key={index + email}>
+          <MailIcon />
+          <Link
+            href={`mailto:${email}`}
+            target="_blank"
+            className="text-white ml-2 font-light hover:underline underline-offset-4"
+          >
+            {email}
+          </Link>
+        </ContactsWrraper>
+      ))}
+
       {contacts.phone.map((phone, index) => (
         <ContactsWrraper key={index + phone}>
           <CallIcon />
@@ -50,7 +63,7 @@ function Contacts({ className }: { className: string }) {
   );
 }
 
-function Address({ className }: { className: string }) {
+function Address({ className }: { className?: string }) {
   return (
     <Wrraper className={className}>
       <h1 className="text-2xl font-bold text-white mb-5 max-w-[300px]">

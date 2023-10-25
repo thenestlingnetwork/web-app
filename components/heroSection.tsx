@@ -18,7 +18,7 @@ function Moto() {
         We connect businesses with audiences through Influencers, Events, PR,
         Socials, Ads and Creatives.{" "}
         <span className="text-primary hover:underline">
-          <Link href="/"> HypeSquad </Link>
+          <Link href="/"> Nestling Network </Link>
         </span>
         helps you build the quirky campaigns who stand out from the competition.
       </p>
@@ -37,20 +37,14 @@ function Moto() {
 
 function MainLogo() {
   return (
-    <div className="min-w-[40%] flex flex-col gap-10">
-      <HypeSquadIcon className="w-full h-full hover:scale-105 transition-all duration-500 ease-in-out" />
-      <div className="flex w-full justify-center items-center gap-2 mt-4">
-        <span className="text-white text-sm md:text-base font-bold">
-          Powered by
-        </span>{" "}
-        <Image
-          src="/networking.png"
-          width={80}
-          height={50}
-          alt="the networking network"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-      </div>
+    <div className="min-w-[40%] flex flex-col gap-10  hover:scale-105 transition-all duration-500 ease-in-out">
+      <Image
+        src="/tnn.png"
+        width={1000}
+        height={1000}
+        alt="the networking network"
+        className="max-w-[500px]"
+      />
     </div>
   );
 }

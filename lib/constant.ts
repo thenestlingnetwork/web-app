@@ -24,22 +24,18 @@ export const services = [
     ],
   },
   {
-    image: "/influencer.png",
-    name: "Influencer Marketing",
+    image: "/consulting.png",
+    name: "Consulting",
     description: [
-      "Perform Campaigns CPI, CPA, CPV, etc",
-      "Live Stream / Vod Integration",
-      "Brand Endorsement Via celebrity",
+      "Strategic Advisory",
+      "Bussiness Development",
+      "Ad Monetization",
     ],
   },
   {
-    image: "/talent.png",
-    name: "Talent Management",
-    description: [
-      "Content creation and distribution",
-      "Talent Partnership for events: Shoutcasters, host, analyst, cosplays, etc",
-      "Esports Team: players, creators, coaches, etc",
-    ],
+    image: "/eventManagement.png",
+    name: "Event Management",
+    description: ["Broadcast Production", "League Operations", "Sponsorship"],
   },
 ];
 
@@ -73,15 +69,15 @@ export const contacts = {
 export const address = "Mumbai, Thane - 400605";
 
 export const socials = {
-  instagram: {
-    url: "https://instagram.com/hypesquad_gg?igshid=Y2I2MzMwZWM3ZA==",
-    icon: InstagramIcon,
-  },
+  // instagram: {
+  //   url: "",
+  //   icon: InstagramIcon,
+  // },
 
-  facebook: {
-    url: "https://www.facebook.com/profile.php?id=100093336257408&mibextid=LQQJ4d",
-    icon: FacebookIcon,
-  },
+  // facebook: {
+  //   url: "",
+  //   icon: FacebookIcon,
+  // },
   linkedin: {
     url: "https://www.linkedin.com/company/thenestlingnetwork/",
     icon: LinkedinIcon,

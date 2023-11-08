@@ -45,7 +45,7 @@ export const teams = [
     role: "Founder",
     image: "/gaurav.png",
     description:
-      "An Award-Winning Cosplayer turned Entrepreneur who offers a wonderful blend of knowledge, ideas, and expertise when it comes to curating and managing Esports and Gaming IPS, Events, Talents, and Marketing.He have been a passionate Evangelist who has worked with almost all stakeholders in the gaming industry for more than 13 years , and have more than 9 years of hands-on experience in gaming and esports. As the founder of `The Nestling Network`, I'm attempting to reshape the market and leave a lasting impression on the Indian gaming sector by promising more exhilarating journeys in this dynamic setting.",
+      "An Award-Winning Cosplayer turned Entrepreneur who offers a wonderful blend of knowledge, ideas, and expertise when it comes to curating and managing Esports and Gaming IPS, Events, Talents, and Marketing.He have been a passionate Evangelist who has worked with almost all stakeholders in the gaming industry for more than 13 years , and have more than 9 years of hands-on experience in gaming and esports.",
     email: "",
     linkedin: "",
   },

@@ -19,13 +19,7 @@ export default function RootLayout({
       <Head>
         <link rel="canonical" href="https://www.thenestlingnetwork.com/" />
       </Head>
-      <body>
-        <Navbar />
-        <main className="flex flex-col justify-center items-center w-full mt-[100px]">
-          {children}
-        </main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

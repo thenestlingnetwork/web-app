@@ -18,7 +18,7 @@ model User {
   gender        String
   email         String   @unique
   phone         Int   @unique
-  games         String
+  games         String[]
   idols         String?
   interseted    String
   state         String  
@@ -27,13 +27,4 @@ model User {
   @@map(name: "users")
 }
 
-enum Gender{
-    MALE
-    FEMALE
-    OTHERS
-}
 
-enum Interseted{
-    YES
-    NO
-}

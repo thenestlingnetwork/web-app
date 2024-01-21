@@ -10,7 +10,7 @@ const createUser = async (
   gender: string,
   email: string,
   phone: number,
-  games: string,
+  games: string[],
   idols: string | null,
   interseted: string,
   state: string

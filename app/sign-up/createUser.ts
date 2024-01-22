@@ -16,22 +16,23 @@ const createUser = async (
   state: string
 ) => {
   try {
-    const user = await prisma.user.create({
-      data: {
-        country,
-        name,
-        age,
-        gender,
-        email,
-        phone,
-        games,
-        idols,
-        interseted,
-        state,
-      },
-    });
+    
+    // const user = await prisma.user.create({
+    //   data: {
+    //     country,
+    //     name,
+    //     age,
+    //     gender,
+    //     email,
+    //     phone,
+    //     games,
+    //     idols,
+    //     interseted,
+    //     state,
+    //   },
+    // });
 
-    console.log('User created:', user);
+    // console.log('User created:', user);
   } catch (error) {
     console.error('Error creating user:', error);
   } finally {

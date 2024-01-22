@@ -3,6 +3,7 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import React, { useState } from "react";
 import createUser from "./createUser";
+import { useForm, Controller } from "react-hook-form"
 
 interface FormData {
   name: string;
@@ -15,55 +16,54 @@ interface FormData {
   idols?: string;
   interested: string;
   state: string;
-  [key: string]: string | number | string[] | null | undefined;
-}
+  }
 
 function page() {
 
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    country: "",
-    age: 0,
-    gender: "",
-    email: "",
-    phone: 0,
-    games: [],
-    idols: "",
-    interested: "",
-    state: "",
+  const { register, handleSubmit, watch, formState: { errors },} = useForm<FormData>({
+    defaultValues: {
+      name: "",
+      country: "",
+      age: 0,
+      gender: "",
+      email: "",
+      phone: 0,
+      games: [],
+      idols: "",
+      interested: "",
+      state: "",
+    },
   });
 
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, checked } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      games: checked
-        ? [...prevData.games, value]
-        : prevData.games.filter((item) => item !== value),
-    }));
-  };
+  // const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { value, checked } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     games: checked
+  //       ? [...prevData.games, value]
+  //       : prevData.games.filter((item) => item !== value),
+  //   }));
+  // };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  //const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+  const onSubmit = async (data:FormData) => {
+    console.log(typeof(data.age))
     await createUser(
-      formData.name,
-      formData.country,
-      formData.age,
-      formData.gender,
-      formData.email,
-      formData.phone,
-      formData.games,
-      formData.idols || null,
-      formData.interested,
-      formData.state
+      data.name,
+      data.country,
+      data.age,
+      data.gender,
+      data.email,
+      data.phone,
+      data.games,
+      data.idols || null,
+      data.interested,
+      data.state
     );
+    
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+  
 
 
   return (
@@ -78,22 +78,34 @@ function page() {
         Loading…
       </iframe> */}
         <h1 className="text-3xl font-semibold mb-4">Sign Up Form</h1>
-        <form className="max-w-md mx-auto bg-white p-6 rounded-md shadow-md" onSubmit={handleSubmit}>
+        <form className="max-w-md mx-auto bg-white p-6 rounded-md shadow-md" onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-6">
             <h2 className="text-xl font-semibold mb-2">Personal Information</h2>
             <label className="block mb-4">
               <span className="text-gray-700">Name:</span>
-              <input type="text" name="name" className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" />
+              <input 
+                type="text"
+                className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" 
+                {...register("name")}
+              />
             </label>
 
             <label className="block mb-4">
               <span className="text-gray-700">Country:</span>
-              <input type="text" name="country" className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" />
+              <input 
+                type="text" 
+                className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" 
+                {...register("country")}
+              />
             </label>
 
             <label className="block mb-4">
               <span className="text-gray-700">Age:</span>
-              <input type="number" name="age" className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" />
+              <input 
+                type="number" 
+                className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" 
+                {...register("age")}
+              />
             </label>
 
             <label className="block mb-4">
@@ -103,30 +115,27 @@ function page() {
                   <label className="inline-flex items-center">
                     <input
                       type="radio"
-                      name="gender"
                       value="MALE"
                       className="form-radio h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                      onChange={handleChange}
+                      {...register("gender")}
                     />
                     <span className="ml-2">Male</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="radio"
-                      name="gender"
                       value="FEMALE"
                       className="form-radio h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                      onChange={handleChange}
+                      {...register("gender")}
                     />
                     <span className="ml-2">Female</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="radio"
-                      name="gender"
                       value="OTHERS"
                       className="form-radio h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                      onChange={handleChange}
+                      {...register("gender")}
                     />
                     <span className="ml-2">Others</span>
                   </label>
@@ -136,7 +145,11 @@ function page() {
 
             <label>
               <span className="text-gray-700">State:</span>
-              <input type="text" name="state" className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" />
+              <input 
+                type="text"
+                className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" 
+                {...register("state")}
+              />
             </label>
           </div>
 
@@ -144,12 +157,20 @@ function page() {
             <h2 className="text-xl font-semibold mb-2">Contact Information</h2>
             <label className="block mb-4">
               <span className="text-gray-700">Email:</span>
-              <input type="email" name="email" className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" />
+              <input 
+              type="email"
+              className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" 
+              {...register("email")}
+              />
             </label>
 
             <label className="block mb-4">
               <span className="text-gray-700">Phone:</span>
-              <input type="tel" name="phone" className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" />
+              <input 
+                type="tel" 
+                className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" 
+                {...register("phone")}
+              />
             </label>
           </div>
           <div>
@@ -161,22 +182,74 @@ function page() {
                   <label className="inline-flex items-center">
                     <input
                       type="checkbox"
-                      name="games"
-                      value="Chess"
+                      value="Counter-Strike"
                       className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                      onChange={handleCheckboxChange}
+                     
                     />
-                    <span className="ml-2">Chess</span>
+                    <span className="ml-2">Counter-Strike</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="checkbox"
-                      name="games"
-                      value="Football"
+                      value="Dota2"
                       className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                      onChange={handleCheckboxChange}
+                     
                     />
-                    <span className="ml-2">Football</span>
+                    <span className="ml-2">Dota 2</span>
+                  </label>
+                  <label className="inline-flex items-center mt-2">
+                    <input
+                      type="checkbox"
+                      value="FIFA"
+                      className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
+                     
+                    />
+                    <span className="ml-2">FIFA</span>
+                  </label>
+                  <label className="inline-flex items-center mt-2">
+                    <input
+                      type="checkbox"
+                      value="PUBGM/BGMI"
+                      className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
+                     
+                    />
+                    <span className="ml-2">PUBGM/BGMI</span>
+                  </label>
+                  <label className="inline-flex items-center mt-2">
+                    <input
+                      type="checkbox"
+                      value="Valorant"
+                      className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
+                     
+                    />
+                    <span className="ml-2">Valorant</span>
+                  </label>
+                  <label className="inline-flex items-center mt-2">
+                    <input
+                      type="checkbox"
+                      value="RealCricket"
+                      className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
+                     
+                    />
+                    <span className="ml-2">RealCricket</span>
+                  </label>
+                  <label className="inline-flex items-center mt-2">
+                    <input
+                      type="checkbox"
+                      value="Mobile Legends"
+                      className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
+                     
+                    />
+                    <span className="ml-2">Mobile Legends</span>
+                  </label>
+                  <label className="inline-flex items-center mt-2">
+                    <input
+                      type="checkbox"
+                      value="Others"
+                      className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
+                      
+                    />
+                    <span className="ml-2">Others</span>
                   </label>
 
                 </div>
@@ -185,7 +258,11 @@ function page() {
 
             <label>
               <span className="text-gray-700">Idols:</span>
-              <input type="text" name="idols" className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" />
+              <input 
+                type="text" 
+                className="form-input mt-1 block w-full border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none" 
+                {...register("idols")}  
+              />
             </label>
 
             <label className="block mb-4">
@@ -195,26 +272,25 @@ function page() {
                   <label className="inline-flex items-center">
                     <input
                       type="radio"
-                      name="interested"
                       value="YES"
                       className="form-radio h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                      onChange={handleChange}
+                      {...register("interested")}
                     />
                     <span className="ml-2">Yes</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="radio"
-                      name="interested"
                       value="NO"
                       className="form-radio h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                      onChange={handleChange}
+                      {...register("interested")}
                     />
                     <span className="ml-2">No</span>
                   </label>
                 </div>
               </div>
             </label>
+            
 
           </div>
 

@@ -20,7 +20,7 @@ interface FormData {
 
 function page() {
 
-  const { register, handleSubmit, watch, formState: { errors },} = useForm<FormData>({
+  const { register,getValues, handleSubmit, watch, formState: { errors }, control, setValue, } = useForm<FormData>({
     defaultValues: {
       name: "",
       country: "",
@@ -35,19 +35,23 @@ function page() {
     },
   });
 
-  // const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { value, checked } = e.target;
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     games: checked
-  //       ? [...prevData.games, value]
-  //       : prevData.games.filter((item) => item !== value),
-  //   }));
-  // };
+  const handleGamesChange = (value: string, isChecked: boolean) => {
+    const curr = getValues("games")
+    console.log(curr);
+    if(isChecked){
+      curr.push(value)
+    }else{
+      const index = curr.indexOf(value)
+      curr.splice(index)
+
+    }
+    setValue("games",curr)
+  };
+  
 
   //const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
   const onSubmit = async (data:FormData) => {
-    console.log(typeof(data.age))
+    
     await createUser(
       data.name,
       data.country,
@@ -182,72 +186,64 @@ function page() {
                   <label className="inline-flex items-center">
                     <input
                       type="checkbox"
-                      value="Counter-Strike"
                       className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                     
+                      onChange={(e) => handleGamesChange("Counter-Strike", e.target.checked)}
                     />
                     <span className="ml-2">Counter-Strike</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="checkbox"
-                      value="Dota2"
                       className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                     
+                      onChange={(e) => handleGamesChange("Dota2", e.target.checked)}
                     />
                     <span className="ml-2">Dota 2</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="checkbox"
-                      value="FIFA"
                       className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                     
+                      onChange={(e) => handleGamesChange("FIFA", e.target.checked)}
                     />
                     <span className="ml-2">FIFA</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="checkbox"
-                      value="PUBGM/BGMI"
                       className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                     
+                      onChange={(e) => handleGamesChange("PUBGM/BGMI", e.target.checked)}
                     />
                     <span className="ml-2">PUBGM/BGMI</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="checkbox"
-                      value="Valorant"
                       className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                     
+                      onChange={(e) => handleGamesChange("Valorant", e.target.checked)}
                     />
                     <span className="ml-2">Valorant</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="checkbox"
-                      value="RealCricket"
                       className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                     
+                      onChange={(e) => handleGamesChange("RealCricket", e.target.checked)}
                     />
                     <span className="ml-2">RealCricket</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="checkbox"
-                      value="Mobile Legends"
                       className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                     
+                      onChange={(e) => handleGamesChange("Mobile Legends", e.target.checked)}
                     />
                     <span className="ml-2">Mobile Legends</span>
                   </label>
                   <label className="inline-flex items-center mt-2">
                     <input
                       type="checkbox"
-                      value="Others"
                       className="form-checkbox h-5 w-5 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:outline-none"
-                      
+                      onChange={(e) => handleGamesChange("Others", e.target.checked)}
                     />
                     <span className="ml-2">Others</span>
                   </label>

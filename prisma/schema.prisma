@@ -17,7 +17,7 @@ model User {
   age           Int
   gender        String
   email         String    @unique
-  phone         Int       @unique
+  phone         BigInt       @unique
   games         String[]
   idols         String?
   interseted    String

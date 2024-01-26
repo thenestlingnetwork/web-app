@@ -2,12 +2,13 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
+  MailIcon,
 } from "@/components/ui/icons";
 
 export const services = [
   {
-    image: "/influencer.png",
-    name: "Influencer Marketing",
+    image: "/game.png",
+    name: "Organised and Inclusive Esports Eco system",
     description: [
       "Perform Campaigns CPI, CPA, CPV, etc",
       "Live Stream / Vod Integration",
@@ -15,8 +16,8 @@ export const services = [
     ],
   },
   {
-    image: "/talent.png",
-    name: "Talent Management",
+    image: "/game.png",
+    name: "Cross Polination of Players of different game titles and geres",
     description: [
       "Content creation and distribution",
       "Talent Partnership for events: Shoutcasters, host, analyst, cosplays, etc",
@@ -24,8 +25,8 @@ export const services = [
     ],
   },
   {
-    image: "/consulting.png",
-    name: "Consulting",
+    image: "/game.png",
+    name: "Building micro-communities",
     description: [
       "Strategic Advisory",
       "Bussiness Development",
@@ -33,8 +34,8 @@ export const services = [
     ],
   },
   {
-    image: "/eventManagement.png",
-    name: "Event Management",
+    image: "/game.png",
+    name: "Making exports a viable career",
     description: ["Broadcast Production", "League Operations", "Sponsorship"],
   },
 ];
@@ -69,17 +70,28 @@ export const contacts = {
 export const address = "Mumbai, Thane - 400605";
 
 export const socials = {
-  // instagram: {
-  //   url: "",
-  //   icon: InstagramIcon,
-  // },
+  instagram: {
+    url: "",
+    icon: InstagramIcon,
+  },
 
-  // facebook: {
-  //   url: "",
-  //   icon: FacebookIcon,
-  // },
+  facebook: {
+    url: "",
+    icon: FacebookIcon,
+  },
   linkedin: {
     url: "https://www.linkedin.com/company/thenestlingnetwork/",
     icon: LinkedinIcon,
   },
+  
 };
+
+export const games = [
+  "./games/cricket.png",
+  "./games/valorant.png",
+  "./games/fifa.png",
+  "./games/dota.png",
+  "./games/bgmi.png",
+  "./games/ml.png",
+  "./games/cs.png",
+];  

@@ -40,8 +40,8 @@ const DialogDemo: React.FC<DialogProps> = ({ isOpen, onClose }) => {
 
                 </Dialog.Trigger>
                 <Dialog.Portal>
-                    <Dialog.Overlay className=" backdrop-blur bg-blackA6 data-[state=open]:animate-overlayShow fixed inset-0" />
-                    <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-[#02101F] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none min-w-[90vw] p-5">
+                    <Dialog.Overlay className=" backdrop-blur bg-black/20 data-[state=open]:animate-overlayShow fixed inset-0" />
+                    <Dialog.Content className="fixed top-[50%] left-[50%] max-h-[85vh] min-h-[git ] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-[#02101F]  focus:outline-none w-full max-w-4xl p-5">
                         {!ok && !isSubmitting && <>
                             <Dialog.Title className="text-white m-0 text-[17px] font-medium">
                                 Join Us
@@ -49,7 +49,7 @@ const DialogDemo: React.FC<DialogProps> = ({ isOpen, onClose }) => {
                             <Dialog.Description className="text-[#9B9A9F] mt-[10px] mb-5 text-[15px] leading-normal">
                                 It just takes a few seconds to join our waitlist!
                             </Dialog.Description>
-                            <form onSubmit={handleSubmit(onSubmit)} >
+                            <form className='w-full' onSubmit={handleSubmit(onSubmit)} >
 
                                 <fieldset className="mb-[15px] flex items-center gap-5">
                                     <input

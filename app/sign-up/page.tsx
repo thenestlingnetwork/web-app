@@ -73,7 +73,7 @@ function page() {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 FZAZ">
         {/* <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLScs4Ureej_l3h1x4sFvV7SAlc8LGMV1PlGuNCQRK36KEirA1w/viewform?embedded=true"
         width="100%"

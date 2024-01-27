@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <>
-      
+
       <SectionHolder
         as="nav"
         className="flex flex-row justify-between items-center w-full px-8 py-2 min-h-[100px]"
@@ -36,7 +36,7 @@ export default function Navbar() {
               key={`pc@${section.label}`}
             />
           ))}
-          <Waitlist text="Waitlist" ClassName="ml-5" />
+          <Waitlist text="Waitlist" className="ml-5" />
         </div>
         <MobileMenu sections={sections} />
       </SectionHolder>

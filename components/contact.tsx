@@ -110,7 +110,6 @@ function Wrraper({
 
 function ContactsWrraper({
   children,
-  key,
 }: {
   children: React.ReactNode;
   key?: string;
@@ -118,7 +117,6 @@ function ContactsWrraper({
   return (
     <div
       className="flex flex-row items-center mb-1 gap-1 max-w-[300px]"
-      key={key}
     >
       {children}
     </div>

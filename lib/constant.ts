@@ -7,8 +7,8 @@ import {
 
 export const services = [
   {
-    image: "/game.png",
-    name: "Organised and Inclusive Esports Eco system",
+    image: "/influencer.png",
+    name: "Influencer Marketing",
     description: [
       "Perform Campaigns CPI, CPA, CPV, etc",
       "Live Stream / Vod Integration",
@@ -16,8 +16,8 @@ export const services = [
     ],
   },
   {
-    image: "/game.png",
-    name: "Cross Polination of Players of different game titles and geres",
+    image: "/talent.png",
+    name: "Talent Management",
     description: [
       "Content creation and distribution",
       "Talent Partnership for events: Shoutcasters, host, analyst, cosplays, etc",
@@ -25,8 +25,8 @@ export const services = [
     ],
   },
   {
-    image: "/game.png",
-    name: "Building micro-communities",
+    image: "/consulting.png",
+    name: "Consulting",
     description: [
       "Strategic Advisory",
       "Bussiness Development",
@@ -34,8 +34,8 @@ export const services = [
     ],
   },
   {
-    image: "/game.png",
-    name: "Making exports a viable career",
+    image: "/eventManagement.png",
+    name: "Event Management",
     description: ["Broadcast Production", "League Operations", "Sponsorship"],
   },
 ];
@@ -83,7 +83,6 @@ export const socials = {
     url: "https://www.linkedin.com/company/thenestlingnetwork/",
     icon: LinkedinIcon,
   },
-  
 };
 
 export const games = [
@@ -94,4 +93,4 @@ export const games = [
   "./games/bgmi.png",
   "./games/ml.png",
   "./games/cs.png",
-];  
+];

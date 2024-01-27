@@ -6,10 +6,10 @@ import { cn } from '@/lib/utils';
 
 interface WaitlistProps {
     text: string;
-    ClassName?: ClassValue;
+    className?: ClassValue;
 }
 
-function Waitlist({ text, ClassName = false }: WaitlistProps) {
+function Waitlist({ text, className = false }: WaitlistProps) {
     const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
 
     const openDialog = () => {
@@ -20,9 +20,6 @@ function Waitlist({ text, ClassName = false }: WaitlistProps) {
         setIsDialogOpen(false);
     };
 
-    useEffect(() => {
-        setIsDialogOpen(false);
-    }, []);
 
     const buttonVariant = "secondary";
 
@@ -31,7 +28,7 @@ function Waitlist({ text, ClassName = false }: WaitlistProps) {
             <DialogDemo isOpen={isDialogOpen} onClose={closeDialog} />
             <Button
                 variant={buttonVariant}
-                className={cn("gap-3 w-[120px] bg-[#EC3BE1] rounded-half", ClassName)}
+                className={cn("gap-3 w-[120px] bg-[#EC3BE1] rounded-half", className)}
                 onClick={openDialog}
             >
                 <span>{text}</span>

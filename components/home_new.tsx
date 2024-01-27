@@ -11,9 +11,8 @@ function Home() {
   return (
     <>
       <HeroSection />
-      <IconGallery />
-      <Services />
       <Game />
+      <Services />
       <JoinUs />
       <Contact />
     </>

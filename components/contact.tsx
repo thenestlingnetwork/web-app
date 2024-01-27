@@ -75,6 +75,16 @@ function Address({ className }: { className?: string }) {
           {address}
         </p>
       </AddressWrraper>
+
+      <h1 className="text-2xl mt-6 font-bold text-white mb-5 max-w-[300px]">
+        Marketing
+      </h1>
+
+      <Link className="text-white font-light hover:underline underline-offset-2" href="/marketing">
+
+        Click Here
+
+      </Link>
     </Wrraper>
   );
 }

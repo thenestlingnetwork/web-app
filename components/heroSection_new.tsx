@@ -9,10 +9,10 @@ function Moto() {
     <div className="flex flex-col items-center md:items-start justify-center md:max-w-[50%] md:px-0 px-[10px] text-center md:text-left  ">
       <h1 className="text-4xl md:text-6xl font-bold text-white"> Path to Pro </h1>
       <p className="text-white text-xl mt-4">
-      Our course teaches you the importance of being solo and as a team.
-Learn stategies and improve skills
+        Our course teaches you the importance of being solo and as a team.
+        Learn stategies and improve skills
       </p>
-      <Waitlist text="Waitlist" ClassName="mt-5" />
+      <Waitlist text="Waitlist" className="mt-5" />
     </div>
   );
 }

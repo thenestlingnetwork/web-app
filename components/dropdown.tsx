@@ -2,8 +2,16 @@ import React, { useState } from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { CheckIcon } from '@radix-ui/react-icons';
 
-const DropdownMenuDemo: React.FC = () => {
-    const [gamesChecked, setGamesChecked] = useState<string[]>([]);
+interface Props {
+    gamesChecked: string[];
+    setGamesChecked: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+const DropdownMenuDemo = ({
+    gamesChecked,
+    setGamesChecked,
+}: Props) => {
+
 
     const handleGameCheckedChange = (game: string) => {
         if (gamesChecked.includes(game)) {
@@ -28,10 +36,12 @@ const DropdownMenuDemo: React.FC = () => {
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
                 <button
-                    className="bg-[#02101F] text-[#9B9A9F]"
+                    className="bg-[#02101F] px-4 w-full border-0 border-b-2 text-left border-white/20 py-2 text-[#9B9A9F]"
                     aria-label="Customise options"
                 >
-                    Games
+                    {gamesChecked.length ?
+                        gamesChecked.join(', ')
+                        : "Select Games"}
                 </button>
             </DropdownMenu.Trigger>
 
@@ -48,6 +58,7 @@ const DropdownMenuDemo: React.FC = () => {
                             onCheckedChange={(checked) => {
                                 handleGameCheckedChange(game);
                             }}
+                            onSelect={event => event.preventDefault()}
                         >
                             <DropdownMenu.ItemIndicator className="absolute left-0 w-[25px] inline-flex items-center justify-center">
                                 <CheckIcon />
